@@ -1,7 +1,7 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(name='UniMathLib',
-      version='0.1',
+      version='0.0.7',
       license = "GNU GPLv3",
       description="""UniMathLib is a Python library that provides essential tools for 
       working with mathematical vectors and matrices. It simplifies tasks like vector 
@@ -51,7 +51,7 @@ setup(name='UniMathLib',
       capabilities and streamline your data analysis and computation workflows.""",
       author="Via",
       author_email="hroyango@my.msu.ru",
-      packages=['UniMathLib'],
+      packages=find_packages(),
       install_requires=[
       ],
       zip_safe=False)

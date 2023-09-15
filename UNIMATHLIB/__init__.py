@@ -1,2 +1,2 @@
+from .MathFunc import *
 
-from MathFunc.matrix import Matrix, Vector

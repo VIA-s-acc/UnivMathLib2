@@ -69,6 +69,9 @@ class Matrix():
         QR():
             Perform QR decomposition of the Matrix.
 
+        LU():
+            Perform LU decomposition of the Matrix.
+            
         LU_solver(A, b):
             Solve a linear system Ax = b using LU decomposition.
 
