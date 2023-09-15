@@ -1,6 +1,6 @@
 from setuptools import setup
 
-setup(name='UnivMathLib',
+setup(name='UniMathLib',
       version='0.1',
       description="""UniMathLib is a Python library that provides essential tools for 
       working with mathematical vectors and matrices. It simplifies tasks like vector 
