@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='UniMathLib',
-      version='0.0.7',
+      version='0.0.8',
       license = "GNU GPLv3",
       description="""UniMathLib is a Python library that provides essential tools for 
       working with mathematical vectors and matrices. It simplifies tasks like vector 
@@ -44,7 +44,7 @@ setup(name='UniMathLib',
 
       Identity and Diagonal Matrices: Create identity matrices of any size and diagonal matrices with specified diagonal values.
 
-
+      and others.
       UniMathLib simplifies complex mathematical tasks, making it a valuable tool for professionals and 
       students alike. Whether you need to perform basic vector operations or solve intricate linear systems,
       UniMathLib provides an efficient and user-friendly solution. Start using UniMathLib today to enhance your mathematical 

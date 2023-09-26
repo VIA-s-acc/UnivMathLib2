@@ -87,7 +87,8 @@ class Matrix():
         QR_eigen(max_iterations: int = 100):
             Compute eigenvalues and eigenvectors using QR algorithm
    
-    
+    Properties:
+        - shape: Return the shape (dimension) of the Matrix.
     Attributes:
         rows (int):
             The number of rows in the Matrix.

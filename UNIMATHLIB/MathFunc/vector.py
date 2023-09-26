@@ -35,7 +35,10 @@ class Vector:
         - cross(self, y): Calculate the cross product of two 3D Vectors.
         - size(self): Return the size (dimension) of the Vector.
         - _AllNum(vector): Check if all elements in the Vector are of type int or float.
-
+        - mean(self): Calculate the mean (average) of the vector's values.
+        - variance(self): Calculate the variance of the vector's values.
+        - std_deviation(self): Calculate the standard deviation of the vector's values.
+    
     Properties:
         - size: Return the size (dimension) of the Vector.
 
@@ -408,7 +411,7 @@ class Vector:
 
 
     
-    def cross(self,y):
+    def cross(self,other):
         """Calculate the cross product of two 3-dimensional vectors.
 
         Args:
@@ -423,12 +426,12 @@ class Vector:
         if isinstance(other, (list, tuple, set, dict, str)):
             other = Vector(other)
         if isinstance(other, Vector):
-            if len(self) != 3 or len(y) != 3:
+            if len(self) != 3 or len(other) != 3:
                 raise ValueError("Vector must be 3 dimensional")
             result = Vector([
-            self[1] * y[2] - self[2] * y[1],
-            self[2] * y[0] - self[0] * y[2],
-            self[0] * y[1] - self[1] * y[0]
+            self[1] * other[2] - self[2] * other[1],
+            self[2] * other[0] - self[0] * other[2],
+            self[0] * other[1] - self[1] * other[0]
             ])
             return result
         
@@ -459,6 +462,49 @@ class Vector:
         else:
             raise ValueError(f"Error in vector format, please check {(self,y)}")
     
+    def mean(self):
+        """
+        Calculate the mean (average) of the vector's values.
+
+        Raises:
+            ValueError: If the vector is empty.
+
+        Returns:
+            float: The mean value of the vector's elements.
+        """
+        if len(self) == 0:
+            raise ValueError("Empty Vector")
+        
+        total = sum(self.vector)
+        return total / len(self.vector)
+    
+    def variance(self):
+        """
+        Calculate the variance of the vector's values.
+
+        Raises:
+            ValueError: If there are fewer than 2 values in the vector.
+
+        Returns:
+            float: The variance of the vector's elements.
+        """
+        if len(self) < 2:
+            raise ValueError("Need min 2 values for variance")
+        
+        mean_value = self.mean()
+        squared_diff = [(x - mean_value) ** 2 for x in self.vector]
+        return sum(squared_diff) / (len(self.vector) - 1)
+    
+    def std_deviation(self):
+        """
+        Calculate the standard deviation of the vector's values.
+
+        Returns:
+            float: The standard deviation of the vector's elements.
+        """
+        return (self.variance())**0.5
+    
+
     def _euclidean(self, y):
         """Calculate the Euclidean norm of two vectors.
 
@@ -469,6 +515,7 @@ class Vector:
             scalar: The Euclidean norm between the vectors.
         """
         return sum(abs(x-y)**2 for x,y in zip(self.vector,y.vector))**(1/2)
+      
       
     def _manhattan(self, y):
         """Calculate the Manhattan norm of two vectors.
