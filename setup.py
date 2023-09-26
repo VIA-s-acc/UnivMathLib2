@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='UniMathLib',
-      version='0.0.8.1',
+      version='0.0.8.2',
       license = "GNU GPLv3",
       url = "https://github.com/VIA-s-acc/UnivMathLib2",
       description="""UniMathLib is a Python library that provides essential tools for 
