@@ -12,5 +12,9 @@
   - `moving_average(self, window_size: int) -> Vector`: Added a method for calculating the moving average of a time series with a specified window size.
   - `exponential_smoothing(self, alpha: float) -> Vector`: Added a method for applying exponential smoothing to a time series with a given smoothing parameter.
 
+- **Added the `irr` method** to the `FinancialAnalysis` class for calculating the Internal Rate of Return (IRR) of cash flows.
+- **Added the `npv` method** to the `FinancialAnalysis` class for calculating the Net Present Value (NPV) of cash flows.
+
+These new methods allow users to perform advanced financial analysis, making it easier to assess the profitability and value of investments and projects.
 These new features provide additional statistical analysis capabilities for Vector objects, as well as the ability to perform linear regression on your data using the `LinearRegression` class.
 These new features enable users to perform time series analysis, including moving average and exponential smoothing, using the `TimeSeriesAnalysis` class. This enhances the capabilities of the library for working with time series data.

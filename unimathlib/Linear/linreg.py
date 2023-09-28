@@ -21,7 +21,7 @@ class LinearRegression:
 
         # Fit the model to training data
         X_train = Matrix([[1], [2], [3], [4]])
-        y_train = Matrix([2, 4, 6, 8])
+        y_train = Matrix([[2], [4], [6], [8]])
         model.fit(X_train, y_train)
 
         # Make predictions
@@ -35,7 +35,8 @@ class LinearRegression:
         The coefficients attribute is set to None initially.
         """
         self.coefficients = None
-
+    def __str__(self):
+        return str(self.coefficients)
     def fit(self, X:Matrix, y:Matrix):
         """
         Fit the linear regression model to the training data.
@@ -55,8 +56,8 @@ class LinearRegression:
             y = Matrix(y)
         original_stdout = sys.stdout
         sys.stdout = io.StringIO()
-        if len(X) != len(y):
-            raise ValueError("len(X) must be equal len(y)")
+        # if len(X) != len(y):
+        #     raise ValueError("len(X) must be equal len(y)")
 
         X_reg = Matrix(X.shape[0],X.shape[1]+1)
         for i in range(len(X)):
@@ -68,6 +69,7 @@ class LinearRegression:
         XTY = X_transpose*y
         self.coefficients = XTX.LU_solver(XTY)
         sys.stdout = original_stdout
+    
 
     def predict(self, X):
         """
